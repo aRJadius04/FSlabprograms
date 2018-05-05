@@ -1,0 +1,17 @@
+import heapq
+
+
+#2 files taken (extent to 8)
+outfile="fullsorted.txt"
+for i in range(2):
+    with open(str(i+1)+'.txt') as fp:
+        list1 = fp.read().split('\n')        
+    list1.sort()
+    with open('ns'+str(i+1)+'.txt','w') as fp:
+        for x in list1:
+            fp.write(x+'\n')
+
+with open("ns1.txt","r") as f1,\
+     open("ns2.txt","r") as f2,\
+     open(outfile,"w") as of:
+    of.writelines(heapq.merge(f1, f2))
