@@ -28,5 +28,5 @@ while len(fhandler) > 0:#while there are still files to be read
         fhandler.pop(smallestposition)#pop that file handler as it isnt needed
         lines.pop(smallestposition)#pop it from the lines file
 print('Merged List:')
-for names in sorted(set(lst)):#since kway merge 
+for names in sorted(set(lst)):#since set is unordered
     print(names.strip('\n'))
