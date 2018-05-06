@@ -44,9 +44,7 @@ while True:
                 elif ch=='2':
                     newsem=input("Enter the new sem")
                     x.sem=newsem
-        with open("Out2.txt","a+") as fp:
-            fp.seek(0)
-            fp.truncate()
+        with open("Out2.txt","w+") as fp:
             for x in s:
                 x.pack(fp)
     else:

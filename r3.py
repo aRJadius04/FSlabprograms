@@ -13,7 +13,7 @@ class student:
 def unpack():
     with open("Out3.txt","r") as fp:
         for line in fp:
-            fields=line.strip('\n').split("|")[:-1]
+            fields=line.strip('\n').split("|")[:-1]#[:-1] is needed to not include last | char
             s.append(student(fields[0],fields[1],fields[2]))          
 while True:
     choice=input("1.Insert a record\n2.Search and Modify a record\n3.Exit\nEnter your choice")
@@ -40,9 +40,9 @@ while True:
                 elif ch=='2':
                     newsem=input("Enter the new sem")
                     x.sem=newsem
-        with open("Out3.txt","a+") as fp:
-            fp.seek(0)
-            fp.truncate()
+        with open("Out3.txt","w+") as fp:
+#            fp.seek(0)
+#            fp.truncate()
             for x in s:
                 x.pack(fp)
     else:
