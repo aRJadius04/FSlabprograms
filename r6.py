@@ -97,7 +97,7 @@ def delete():
     print('Record deleted')
     with open("record6.txt","r+") as fp:#r+ means read and write. stream positioned at beginning of file=>so we can use seek unlike a+
         fp.seek(found[ch].addr)
-        fp.write('*|*|*|\n')#if a record has *=>means it is deleted
+        fp.write('*')#if a record has *=>means it is deleted
     i2.pop(indexnums[ch])#remove that element from the index array
     cnt -= 1#reduce the count of the no. of elements
 

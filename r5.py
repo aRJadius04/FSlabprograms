@@ -71,9 +71,10 @@ def delete():
         print('Record not found')
     else:
         print('Record deleted')
+        print(i1[ind].addr)
         with open("record5.txt","r+") as fp:
             fp.seek(i1[ind].addr)
-            fp.write('*|*|*|\n')#if a record has *=>means it is deleted
+            fp.write('*')#if a record has *=>means it is deleted
         i1.pop(ind)#remove that element from the index array
         cnt -= 1#reduce the count of the no. of elements
 
